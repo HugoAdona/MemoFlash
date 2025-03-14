@@ -1,0 +1,137 @@
+body {
+  font-family: "Nunito", sans-serif; /* Apply Nunito font */
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #ccc; /* Increased border width */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  font-weight: 700; /* Use bold weight for heading */
+}
+
+.flashcard-form {
+  margin-bottom: 20px;
+}
+
+.flashcard-form input {
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc; /* Increased border width */
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  font-family: "Nunito", sans-serif; /* Apply Nunito font */
+}
+
+.flashcard-form button {
+  background-color: red;
+  color: white;
+  border: 2px solid red; /* Increased border width */
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Nunito", sans-serif; /* Apply Nunito font */
+  font-weight: 700; /* Use bold weight for button */
+}
+
+.flashcard-form button:hover {
+  background-color: darkred;
+}
+
+.flashcards-container {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.flashcard {
+  background-color: #fff;
+  border: 2px solid #ccc; /* Increased border width */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s;
+  perspective: 1000px;
+  height: 120px; /* Set a reasonable height */
+  font-family: "Nunito", sans-serif; /* Apply Nunito font */
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+.flashcard p {
+  margin: 0;
+  font-size: 18px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flashcard .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.flashcard .actions button {
+  background-color: red;
+  color: white;
+  border: 2px solid red; /* Increased border width */
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: "Nunito", sans-serif; /* Apply Nunito font */
+  font-weight: 700; /* Use bold weight for button */
+}
+
+.flashcard .actions button:hover {
+  background-color: darkred;
+}
